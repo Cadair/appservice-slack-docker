@@ -3,7 +3,9 @@ FROM node:carbon
 # Create app directory
 WORKDIR /usr/src/app
 
-RUN git clone https://github.com/Cadair/matrix-appservice-slack ./
+RUN git clone -b master https://github.com/Cadair/matrix-appservice-slack ./
+#RUN git clone -b plaintext_nicks https://github.com/Cadair/matrix-appservice-slack ./
+#RUN git clone -b develop https://github.com/matrix-org/matrix-appservice-slack ./
 
 RUN mkdir /usr/src/app/userconfig
 
