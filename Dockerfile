@@ -1,11 +1,13 @@
 FROM node:current-alpine
 
 # Create app directory
-RUN apk add git
-RUN mkdir /data/ /config/
+VOLUME /data/ /config/
 
 WORKDIR /usr/src/app
 
+# Should just use this when we upstream this
+# COPY . /usr/src/app
+RUN apk add git
 RUN git clone -b cadair https://github.com/Cadair/matrix-appservice-slack ./
 #RUN git clone -b develop https://github.com/matrix-org/matrix-appservice-slack ./
 
